@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  closeSesion(){
+    const resultado = confirm('Presiona un boton');
+    if (resultado === true) {
+      this.router.navigate(['/login']);
+    }
+  }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }

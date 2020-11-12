@@ -1,5 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +14,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotasComponent } from './notas/notas.component';
 import { DetalleNotasComponent } from './detalle-notas/detalle-notas.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SettingsComponent } from './settings/settings.component';
+import { LoginComponent } from './login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -15,12 +24,20 @@ import { NotFoundComponent } from './not-found/not-found.component';
     MenuComponent,
     NotasComponent,
     DetalleNotasComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SettingsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatBadgeModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatTooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]

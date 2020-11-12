@@ -1,1 +1,31 @@
-<p>notas works!</p>
+<div class="container">
+  <div *ngFor="let nota of notas">
+    <mat-card>
+      <mat-card-title>
+        <h2>
+          {{nota.titulo}}
+       </h2>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <h3>
+          {{nota.fecha}}
+        </h3>
+      </mat-card-subtitle>
+      <mat-card-content>
+        <h4>
+          {{nota.detalle}}
+        </h4>
+      </mat-card-content>
+      <mat-card-actions >
+          <a routerLink="/nota-detalle">
+            <button mat-flat-button color="warn">
+              See
+            </button>
+          </a>
+          <button mat-flat-button color="primary" (click)="share()" matBadge="{{shareCounter}}" matBadgePosition="after" matBadgeColor="accent">
+            Share
+          </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

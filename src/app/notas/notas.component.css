@@ -1,0 +1,16 @@
+mat-card-content{
+  text-align: justify;
+}
+button{
+  margin: 2px;
+}
+mat-card{
+  background-color: yellow;
+  margin: 10px;
+  max-width: 300px;
+}
+.container{
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
