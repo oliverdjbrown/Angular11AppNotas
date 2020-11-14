@@ -1,2 +1,11 @@
-<app-menu></app-menu>
-<router-outlet></router-outlet>
+<ng-container *ngIf="loggedIn; then thenTemplate; else elseTemplate"></ng-container>
+
+<ng-template #thenTemplate>
+  <app-menu (loginStatus)="loginStatus($event)"></app-menu>
+  <router-outlet></router-outlet>
+</ng-template>
+
+<ng-template #elseTemplate>
+  <app-login (loginStatus)="loginStatus($event)"></app-login>
+</ng-template>
+

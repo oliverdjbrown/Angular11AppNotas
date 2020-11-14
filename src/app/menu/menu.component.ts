@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -8,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  @Output() loginStatus = new EventEmitter<boolean>();
+
   closeSesion(){
     const resultado = confirm('Presiona un boton');
     if (resultado === true) {
+      this.loginStatus.emit(false);
       this.router.navigate(['/login']);
     }
   }

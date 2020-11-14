@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AppNotas';
+
+  loggedIn = false;
+  usuario = '';
+
+  loginStatus(status: boolean){
+    this.loggedIn = status;
+  }
+  updateName(user: any){
+    this.usuario = user;
+  }
 }

@@ -1,3 +1,6 @@
+div{
+  box-shadow: 5px 5px 8px #888888;
+}
 .right-align {
   flex: 1 1 auto;
 }

@@ -5,12 +5,23 @@ button{
   margin: 2px;
 }
 mat-card{
-  background-color: yellow;
+  background-color: #fde54a;
   margin: 10px;
   max-width: 300px;
+  min-width: 250px;
 }
 .container{
   margin-top: 30px;
   display: flex;
   flex-wrap: wrap;
+  box-shadow: 5px 5px 8px #888888;
+}
+
+@media (max-width: 700px){
+  .container{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: none;
+  }
 }

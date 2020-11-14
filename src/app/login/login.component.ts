@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
+
+  @Output() loginStatus = new EventEmitter<boolean>();
+
+  Login(){
+    this.loginStatus.emit(true);
+    this.router.navigate(['/notas']);
+  }
 
   ngOnInit(): void {
   }
