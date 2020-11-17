@@ -15,6 +15,7 @@ export class AppComponent {
 
   loginStatus(status: boolean){
      this.usuarioLogueado = status;
+     this.usuarioServicio.usuarioLogueado = status;
   }
 
 }

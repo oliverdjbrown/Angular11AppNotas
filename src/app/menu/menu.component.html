@@ -1,19 +1,19 @@
 <section>
   <mat-toolbar>
-    <button mat-icon-button [matMenuTriggerFor]="menu">
+    <button mat-icon-button [matMenuTriggerFor]="menu" matTooltip="Abrir menu">
       <mat-icon>menu</mat-icon>
     </button>
 
     <mat-menu #menu="matMenu">
-      <button mat-menu-item *ngIf="[privilegio]">
-        <mat-icon>dialpad</mat-icon>
-        <span>Redial</span>
+      <button mat-menu-item [routerLink]="['/notas']">
+        <mat-icon>notes</mat-icon>
+        <span>Notas</span>
       </button>
-      <button mat-menu-item >
-        <mat-icon>voicemail</mat-icon>
-        <span>Check voice mail</span>
+      <button mat-menu-item [routerLink]="['/crear-nota']" *ngIf="privilegio">
+        <mat-icon>add</mat-icon>
+        <span>Crear Nota</span>
       </button>
-      <button mat-menu-item [routerLink]="['/settings']" *ngIf="[privilegio]">
+      <button mat-menu-item [routerLink]="['/settings']" *ngIf="privilegio">
         <mat-icon>settings_applications</mat-icon>
         <span>Configuraciones</span>
       </button>
@@ -24,8 +24,8 @@
     <span>Notas</span>
 
     <span class="right-align"></span>
-    {{user}}
-    <button mat-icon-button matTooltip="Close Sesion" (click)="closeSesion()">
+    {{user | uppercase}}
+    <button mat-icon-button matTooltip="Cerrar Sesion" (click)="closeSesion()">
       <mat-icon>exit_to_app</mat-icon>
     </button>
   </mat-toolbar>

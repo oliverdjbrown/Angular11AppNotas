@@ -1,4 +1,4 @@
-export const notas = [
+export let notas = [
   {
     id: '1',
     titulo: 'Articulos',

@@ -20,12 +20,14 @@ export class MenuComponent implements OnInit {
     if (resultado === true) {
       this.loginStatus.emit(false);
       this.usuariosService.usuarioLogueado = false;
+      this.usuariosService.privilegio = false;
       this.router.navigate(['/login']);
     }
   }
 
   ngOnInit(): void {
     this.user = this.usuariosService.nombreUsuario;
+    this.privilegio = this.usuariosService.privilegio;
   }
 
 }

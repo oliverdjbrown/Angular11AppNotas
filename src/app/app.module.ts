@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +21,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { SettingsComponent } from './settings/settings.component';
 import { LoginComponent } from './login/login.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { CrearNotaComponent } from './crear-nota/crear-nota.component';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import { MatMenuModule } from '@angular/material/menu';
     DetalleNotasComponent,
     NotFoundComponent,
     SettingsComponent,
-    LoginComponent
+    LoginComponent,
+    CrearNotaComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatTooltipModule,
     MatFormFieldModule,
     MatInputModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

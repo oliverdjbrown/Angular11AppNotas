@@ -5,18 +5,18 @@ import { Injectable } from '@angular/core';
 })
 export class UsuariosService {
 
-   usuarios = [
+    usuarios = [
     {
       id: '1',
       usuario: 'user',
       password: '1234',
-      privilegio: 'false'
+      privilegio: 'user'
     },
     {
       id: '2',
       usuario: 'admin',
       password: '1234',
-      privilegio: 'true'
+      privilegio: 'administrator'
     },
   ];
 
@@ -24,17 +24,24 @@ export class UsuariosService {
   usuarioLogueado = false;
   privilegio = false;
 
+
   validarUsuario(user: string, pass: string){
      if (this.usuarios.find(u => u.usuario === user) && this.usuarios.find(p => p.password === pass)){
       this.usuarioLogueado = true;
-      if(this.usuarios.find(u => u.privilegio === 'administrator')){
-        this.privilegio = true;
-      }
+      this.nombreUsuario = String(this.usuarios.find(u => u.usuario === user)?.usuario);
+      this.validarPrivilegio(user);
       return true;
      } else {
       return false;
      }
   }
 
-  constructor() { }
+  validarPrivilegio(user: string){
+    const privilegios = String(this.usuarios.find(u => u.usuario === user)?.privilegio);
+    if(privilegios === 'administrator'){
+      this.privilegio = true;
+    } else{
+      this.privilegio = false;
+    }
+  }
 }
