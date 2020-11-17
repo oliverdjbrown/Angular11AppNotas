@@ -19,6 +19,7 @@ import { DetalleNotasComponent } from './detalle-notas/detalle-notas.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SettingsComponent } from './settings/settings.component';
 import { LoginComponent } from './login/login.component';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { LoginComponent } from './login/login.component';
     MatIconModule,
     MatTooltipModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

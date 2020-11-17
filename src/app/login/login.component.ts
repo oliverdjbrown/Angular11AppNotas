@@ -1,5 +1,7 @@
+import { UsuariosService } from './../usuarios.service';
 import { Router } from '@angular/router';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output} from '@angular/core';
+
 
 @Component({
   selector: 'app-login',
@@ -8,13 +10,19 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
-
   @Output() loginStatus = new EventEmitter<boolean>();
 
-  Login(){
-    this.loginStatus.emit(true);
-    this.router.navigate(['/notas']);
+  constructor(private router: Router, private usuariosService: UsuariosService) { }
+
+  Login(user: string, pass: string){
+    this.usuariosService.usuarioLogueado = this.usuariosService.validarUsuario(user, pass);
+    if(this.usuariosService.usuarioLogueado === true) {
+      this.loginStatus.emit(true);
+      this.router.navigate(['/notas']);
+    }
+    else {
+      alert('Usuario o contraseña incorrecto');
+    }
   }
 
   ngOnInit(): void {

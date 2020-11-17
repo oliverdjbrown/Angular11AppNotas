@@ -1,3 +1,4 @@
+import { UsuariosService } from './usuarios.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,13 +9,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'AppNotas';
 
-  loggedIn = false;
-  usuario = '';
+  usuarioLogueado = false;
+
+  constructor(private usuarioServicio: UsuariosService){}
 
   loginStatus(status: boolean){
-    this.loggedIn = status;
+     this.usuarioLogueado = status;
   }
-  updateName(user: any){
-    this.usuario = user;
-  }
+
 }

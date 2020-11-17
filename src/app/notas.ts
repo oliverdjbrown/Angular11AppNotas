@@ -22,5 +22,17 @@ export const notas = [
     titulo: 'Universidad',
     fecha: '13-11-2020',
     detalle: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores numquam, a, officia porro quos sapiente est non excepturi obcaecati laborum culpa.'
+  },
+  {
+    id: '5',
+    titulo: 'Telefonos',
+    fecha: '14-11-2020',
+    detalle: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores numquam, a, officia porro quos sapiente est non excepturi obcaecati laborum culpa.'
+  },
+  {
+    id: '6',
+    titulo: 'Banco',
+    fecha: '15-11-2020',
+    detalle: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores numquam, a, officia porro quos sapiente est non excepturi obcaecati laborum culpa.'
   }
 ];

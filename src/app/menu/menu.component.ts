@@ -1,5 +1,6 @@
+import { UsuariosService } from './../usuarios.service';
 import { Router } from '@angular/router';
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-menu',
@@ -9,17 +10,22 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 export class MenuComponent implements OnInit {
 
   @Output() loginStatus = new EventEmitter<boolean>();
+  privilegio = false;
+  user = '';
+
+  constructor(private router: Router, private usuariosService: UsuariosService) { }
 
   closeSesion(){
     const resultado = confirm('Presiona un boton');
     if (resultado === true) {
       this.loginStatus.emit(false);
+      this.usuariosService.usuarioLogueado = false;
       this.router.navigate(['/login']);
     }
   }
-  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.user = this.usuariosService.nombreUsuario;
   }
 
 }

@@ -1,4 +1,4 @@
-<ng-container *ngIf="loggedIn; then thenTemplate; else elseTemplate"></ng-container>
+<ng-container *ngIf="usuarioLogueado; then thenTemplate; else elseTemplate"></ng-container>
 
 <ng-template #thenTemplate>
   <app-menu (loginStatus)="loginStatus($event)"></app-menu>
@@ -8,4 +8,3 @@
 <ng-template #elseTemplate>
   <app-login (loginStatus)="loginStatus($event)"></app-login>
 </ng-template>
-
