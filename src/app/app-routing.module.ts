@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'notas', component: NotasComponent },
   { path: 'crear-nota', component: CrearNotaComponent },
-  { path: 'nota-detalle', component: DetalleNotasComponent },
+  { path: 'nota-detalle/:parametro', component: DetalleNotasComponent },
   { path: 'settings', component: SettingsComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }

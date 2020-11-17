@@ -16,7 +16,7 @@ export class MenuComponent implements OnInit {
   constructor(private router: Router, private usuariosService: UsuariosService) { }
 
   closeSesion(){
-    const resultado = confirm('Presiona un boton');
+    const resultado = confirm('Deseas cerrar sesion?');
     if (resultado === true) {
       this.loginStatus.emit(false);
       this.usuariosService.usuarioLogueado = false;

@@ -22,13 +22,13 @@
         </h4>
       </mat-card-content>
       <mat-card-actions >
-          <a routerLink="/nota-detalle">
+          <a routerLink="/nota-detalle/{{nota.id}}">
             <button mat-flat-button color="warn">
-              See
+              Detalle
             </button>
           </a>
           <button mat-flat-button color="primary" (click)="share()" matBadge="{{shareCounter}}" matBadgePosition="after" matBadgeColor="accent">
-            Share
+            Compartir
           </button>
       </mat-card-actions>
     </mat-card>

@@ -1,1 +1,19 @@
-<p>detalle-notas works!</p>
+<h1>
+  Nota: el componente detalle notas es visible para todos los usuarios.
+</h1>
+
+<section class="container">
+  <form>
+    <div class="form-group">
+      <label>Titulo</label>
+      <input type="text" class="form-control" value="{{titulo}}">
+    </div>
+    <div class="form-group">
+      <label>Detalle</label>
+      <textarea class="form-control" rows="3" value="{{detalle}}"></textarea>
+    </div>
+  </form>
+  <button type="button" class="btn btn-primary" (click)="guardar()">Actualizar</button>
+  <button type="button" class="btn btn-info" >Imprimir</button>
+  <button type="button" class="btn btn-danger" [routerLink]="['/notas']">Canelar</button>
+</section>
