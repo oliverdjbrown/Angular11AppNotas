@@ -1,0 +1,27 @@
+<h1>
+  Nota: el componente reporte solo es visible para el administrador.
+</h1>
+
+<section class="container">\
+
+  <table class="table" >
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Titulo</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Detalle</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let nota of notas">
+      <tr>
+        <td>{{nota.id}}</td>
+        <td>{{nota.titulo}}</td>
+        <td>{{nota.fecha}}</td>
+        <td>{{nota.detalle}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button type="button" class="btn btn-info" (click)="imprimir()">Imprimir</button>
+</section>

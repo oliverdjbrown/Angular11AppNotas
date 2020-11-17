@@ -1,3 +1,4 @@
+import { ReporteComponent } from './reporte/reporte.component';
 import { CrearNotaComponent } from './crear-nota/crear-nota.component';
 import { SettingsComponent } from './settings/settings.component';
 import { LoginComponent } from './login/login.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'notas', component: NotasComponent },
   { path: 'crear-nota', component: CrearNotaComponent },
   { path: 'nota-detalle/:parametro', component: DetalleNotasComponent },
+  { path: 'reporte', component: ReporteComponent },
   { path: 'settings', component: SettingsComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }

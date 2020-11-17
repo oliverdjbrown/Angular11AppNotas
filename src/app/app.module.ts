@@ -22,6 +22,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { LoginComponent } from './login/login.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { CrearNotaComponent } from './crear-nota/crear-nota.component';
+import { ReporteComponent } from './reporte/reporte.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { CrearNotaComponent } from './crear-nota/crear-nota.component';
     NotFoundComponent,
     SettingsComponent,
     LoginComponent,
-    CrearNotaComponent
+    CrearNotaComponent,
+    ReporteComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,7 @@ import { CrearNotaComponent } from './crear-nota/crear-nota.component';
     MatFormFieldModule,
     MatInputModule,
     MatMenuModule,
-    MatTabsModule
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

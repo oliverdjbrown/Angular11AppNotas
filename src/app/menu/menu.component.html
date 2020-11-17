@@ -13,6 +13,10 @@
         <mat-icon>add</mat-icon>
         <span>Crear Nota</span>
       </button>
+      <button mat-menu-item [routerLink]="['/reporte']" *ngIf="privilegio">
+        <mat-icon>print</mat-icon>
+        <span>Reporte</span>
+      </button>
       <button mat-menu-item [routerLink]="['/settings']" *ngIf="privilegio">
         <mat-icon>settings_applications</mat-icon>
         <span>Configuraciones</span>
