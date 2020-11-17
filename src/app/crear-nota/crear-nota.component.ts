@@ -1,5 +1,6 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { notas } from '../notas';
 
 @Component({
   selector: 'app-crear-nota',
@@ -10,8 +11,13 @@ export class CrearNotaComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  guardar(){
-    alert('Nota guardada');
+  guardar(title: string, detail: string){
+    notas.push({
+      id: String(notas.length + 1),
+      titulo: title,
+      fecha: String(Date().slice(+6)),
+      detalle: detail
+    });
     this.router.navigate(['/notas']);
   }
 

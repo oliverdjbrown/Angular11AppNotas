@@ -6,12 +6,12 @@
   <form>
     <div class="form-group">
       <label>Titulo</label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" #title>
     </div>
     <div class="form-group">
       <label>Detalle</label>
-      <textarea class="form-control" rows="3"></textarea>
+      <textarea class="form-control" rows="3" #detail></textarea>
     </div>
   </form>
-  <button type="button" class="btn btn-primary" (click)="guardar()">Guardar</button>
+  <button type="button" class="btn btn-primary" (click)="guardar(title.value, detail.value)">Guardar</button>
 </section>
