@@ -14,4 +14,20 @@ export class NotasCrudService {
   GetNotas(): Observable<NotasI[]>{
     return this.http.get<NotasI[]>(this.urlAPI);
   }
+
+  GetNota(id: number): Observable<NotasI>{
+    return this.http.get<NotasI>(this.urlAPI + '/' + id);
+  }
+
+  addNota(nota: NotasI): Observable<NotasI> {
+    return this.http.post<NotasI>(this.urlAPI, nota);
+  }
+
+  updateNota(id: string, nota: NotasI): Observable<NotasI> {
+    return this.http.put<NotasI>(this.urlAPI + '/' + id, nota);
+  }
+
+  deleteNota(id: string): Observable<{}>{
+    return this.http.delete(this.urlAPI + '/' + id);
+  }
 }
