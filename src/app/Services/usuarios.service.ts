@@ -25,7 +25,7 @@ export class UsuariosService {
   privilegio = false;
 
 
-  validarUsuario(user: string, pass: string){
+  validarUsuario(user: string, pass: string): boolean{
      if (this.usuarios.find(u => u.usuario === user) && this.usuarios.find(p => p.password === pass)){
       this.usuarioLogueado = true;
       this.nombreUsuario = String(this.usuarios.find(u => u.usuario === user)?.usuario);
@@ -36,7 +36,7 @@ export class UsuariosService {
      }
   }
 
-  validarPrivilegio(user: string){
+  validarPrivilegio(user: string): void{
     const privilegios = String(this.usuarios.find(u => u.usuario === user)?.privilegio);
     if(privilegios === 'administrator'){
       this.privilegio = true;

@@ -23,6 +23,7 @@ import { LoginComponent } from './components/login/login.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { CrearNotaComponent } from './components/crear-nota/crear-nota.component';
 import { ReporteComponent } from './components/reporte/reporte.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { ReporteComponent } from './components/reporte/reporte.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,

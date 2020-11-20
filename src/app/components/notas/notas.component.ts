@@ -1,3 +1,5 @@
+import { NotasI } from './../../Models/notas.interface';
+import { NotasCrudService } from './../../Services/notas.crud.service';
 import { notas } from './../../notas';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,18 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotasComponent implements OnInit {
 
-  notas = notas;
+  // facke Data
+  // notas = notas;
   shareCounter = 0;
+  // Real Data From Api
+  dataNotas: NotasI[] = [];
 
- share(): void{
+  constructor(private notasSvc: NotasCrudService) { }
+
+  getNotas(): void {
+    this.notasSvc.GetNotas().subscribe(data => (this.dataNotas = data));
+  }
+
+  share(): void{
     this.shareCounter += 1;
     alert('Has compartido este contenido: ' + this.shareCounter);
   }
 
-  constructor() { }
-
   ngOnInit(): void {
-
+    this.getNotas();
   }
 
 }
