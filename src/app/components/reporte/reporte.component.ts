@@ -1,6 +1,6 @@
+import { notas } from './../../notas';
 import { Component, OnInit } from '@angular/core';
 import * as printJS from 'print-js';
-import { notas } from '../notas';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class ReporteComponent implements OnInit {
 
   constructor() { }
 
-  imprimir(){
+  imprimir(): void{
     printJS({printable: notas, properties: ['id', 'titulo', 'fecha', 'detalle'], type: 'json', gridHeaderStyle: 'color: black;  border: 1px solid #3971A5;',
     gridStyle: 'border: 1px solid #3971A5;'});
   }

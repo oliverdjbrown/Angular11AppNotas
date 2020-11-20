@@ -1,4 +1,4 @@
-import { notas } from './../notas';
+import { notas } from './../../notas';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -12,7 +12,7 @@ export class NotasComponent implements OnInit {
   notas = notas;
   shareCounter = 0;
 
- share(){
+ share(): void{
     this.shareCounter += 1;
     alert('Has compartido este contenido: ' + this.shareCounter);
   }
@@ -20,6 +20,7 @@ export class NotasComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

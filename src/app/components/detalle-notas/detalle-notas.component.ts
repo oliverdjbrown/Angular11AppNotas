@@ -1,4 +1,4 @@
-import { notas } from './../notas';
+import { notas } from './../../notas';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,14 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalleNotasComponent implements OnInit {
 
+  notas = notas;
   idNota = '';
   titulo = '';
   detalle = '';
 
   constructor(private router: Router, private rutaActiva: ActivatedRoute) { }
 
-  guardar(){
+  guardar(): void{
     alert('Nota guardada');
+    this.router.navigate(['/notas']);
+  }
+
+  eliminar(): void{
+    this.notas = this.notas.filter(o => o.id !== this.idNota );
     this.router.navigate(['/notas']);
   }
 

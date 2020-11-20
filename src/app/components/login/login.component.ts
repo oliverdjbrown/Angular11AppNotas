@@ -1,4 +1,4 @@
-import { UsuariosService } from './../usuarios.service';
+import { UsuariosService } from './../../Services/usuarios.service';
 import { Router } from '@angular/router';
 import { Component, EventEmitter, OnInit, Output} from '@angular/core';
 
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   constructor(private router: Router, private usuariosService: UsuariosService) { }
 
-  Login(user: string, pass: string){
+  Login(user: string, pass: string): void{
     this.usuariosService.usuarioLogueado = this.usuariosService.validarUsuario(user, pass);
     if(this.usuariosService.usuarioLogueado === true) {
       this.loginStatus.emit(true);

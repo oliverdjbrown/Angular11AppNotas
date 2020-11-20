@@ -1,4 +1,4 @@
-import { UsuariosService } from './usuarios.service';
+import { UsuariosService } from './Services/usuarios.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -13,7 +13,7 @@ export class AppComponent {
 
   constructor(private usuarioServicio: UsuariosService){}
 
-  loginStatus(status: boolean){
+  loginStatus(status: boolean): void{
      this.usuarioLogueado = status;
      this.usuarioServicio.usuarioLogueado = status;
   }

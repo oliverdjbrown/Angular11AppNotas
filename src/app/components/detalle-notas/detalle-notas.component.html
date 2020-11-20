@@ -14,5 +14,6 @@
     </div>
   </form>
   <button type="button" class="btn btn-primary" (click)="guardar()">Actualizar</button>
-  <button type="button" class="btn btn-danger" [routerLink]="['/notas']">Canelar</button>
+  <button type="button" class="btn btn-danger" (click)="eliminar()">Eliminar</button>
+  <button type="button" class="btn btn-info" [routerLink]="['/notas']">Canelar</button>
 </section>
