@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  urlAPI: 'https://localhost:44322/'
+  // urlAPI: 'https://localhost:44322/'
+  urlAPI: 'https://jsonplaceholder.typicode.com/todos'
 };
 
 /*
