@@ -1,4 +1,4 @@
-
+import { menuNavegacion } from './../../menu';
 import { Router } from '@angular/router';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { UsuariosService } from 'src/app/Services/usuarios.service';
@@ -12,11 +12,12 @@ export class MenuComponent implements OnInit {
 
   @Output() loginStatus = new EventEmitter<boolean>();
   privilegio = false;
+  menuArray = menuNavegacion;
   user = '';
 
   constructor(private router: Router, private usuariosService: UsuariosService) { }
 
-  closeSesion(){
+  closeSesion(): void{
     const resultado = confirm('Deseas cerrar sesion?');
     if (resultado === true) {
       this.loginStatus.emit(false);

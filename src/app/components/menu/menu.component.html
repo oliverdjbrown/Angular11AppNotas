@@ -5,22 +5,12 @@
     </button>
 
     <mat-menu #menu="matMenu">
-      <button mat-menu-item [routerLink]="['/notas']">
-        <mat-icon>notes</mat-icon>
-        <span>Notas</span>
-      </button>
-      <button mat-menu-item [routerLink]="['/crear-nota']" *ngIf="privilegio">
-        <mat-icon>add</mat-icon>
-        <span>Crear Nota</span>
-      </button>
-      <button mat-menu-item [routerLink]="['/reporte']" *ngIf="privilegio">
-        <mat-icon>print</mat-icon>
-        <span>Reporte</span>
-      </button>
-      <button mat-menu-item [routerLink]="['/settings']" *ngIf="privilegio">
-        <mat-icon>settings_applications</mat-icon>
-        <span>Configuraciones</span>
-      </button>
+      <div *ngFor="let menu of menuArray">
+        <button mat-menu-item routerLink="{{menu.menuLink}}">
+          <mat-icon>{{menu.menuIcon}}</mat-icon>
+          <span>{{menu.menuName}}</span>
+        </button>
+      </div>
     </mat-menu>
 
     <img src="https://i.pinimg.com/originals/b6/cd/e8/b6cde81d1c489b0e20d85a6e06c5f8f9.png" width="20" height="fa-rotate-270" class="d-inline-block align-top" alt="" loading="lazy">
