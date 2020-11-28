@@ -3,34 +3,31 @@
 </h1>
 
 <div class="container">
-
   <div *ngFor="let nota of dataNotas">
-    <mat-card>
-      <mat-card-title>
-        <h2>
-          {{nota.titulo}}
-       </h2>
-      </mat-card-title>
-      <mat-card-subtitle>
-        <h3>
+    <div>
+      <mat-card>
+        <img src="https://cdn.pixabay.com/photo/2013/07/12/14/10/pushpin-147918_960_720.png" alt="">
+        <mat-card-title>
+          <h2>{{nota.titulo}}</h2>
+        </mat-card-title>
+        <mat-card-subtitle>
           {{nota.fecha}}
-        </h3>
-      </mat-card-subtitle>
-      <mat-card-content>
-        <h4>
-          {{nota.detalle}}
-        </h4>
-      </mat-card-content>
-      <mat-card-actions >
-          <a routerLink="/nota-detalle/{{nota.id}}">
-            <button mat-flat-button color="warn">
-              Detalle
+        </mat-card-subtitle>
+        <mat-card-content>
+          <h4>{{nota.detalle}}</h4>
+          <!-- <img [src]="nota.foto.url" alt=""> -->
+        </mat-card-content>
+        <mat-card-actions >
+            <a routerLink="/nota-detalle/{{nota.id}}">
+              <button mat-flat-button color="warn">
+                Detalle
+              </button>
+            </a>
+            <button mat-flat-button color="primary" (click)="share()" matBadge="{{shareCounter}}" matBadgePosition="after" matBadgeColor="accent">
+              Compartir
             </button>
-          </a>
-          <button mat-flat-button color="primary" (click)="share()" matBadge="{{shareCounter}}" matBadgePosition="after" matBadgeColor="accent">
-            Compartir
-          </button>
-      </mat-card-actions>
-    </mat-card>
+        </mat-card-actions>
+      </mat-card>
+    </div>
   </div>
 </div>

@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { NotasI } from './../Models/notas.interface';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -7,7 +8,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class NotasCrudService {
-  private urlAPI = 'https://localhost:44322/api/notas';
+
+  private urlAPI = environment.urlAPI;
 
   constructor(private http: HttpClient) { }
 
@@ -23,11 +25,11 @@ export class NotasCrudService {
     return this.http.post<NotasI>(this.urlAPI, nota);
   }
 
-  updateNota(id: string, nota: NotasI): Observable<NotasI> {
+  updateNota(id: number, nota: NotasI): Observable<NotasI> {
     return this.http.put<NotasI>(this.urlAPI + '/' + id, nota);
   }
 
-  deleteNota(id: string): Observable<{}>{
+  deleteNota(id: number): Observable<{}>{
     return this.http.delete(this.urlAPI + '/' + id);
   }
 }

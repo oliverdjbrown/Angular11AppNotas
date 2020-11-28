@@ -3,4 +3,8 @@ export interface NotasI {
   titulo: string;
   fecha: string;
   detalle: string;
+  /*foto: {
+    name: string;
+    url: string;
+  };*/
 }

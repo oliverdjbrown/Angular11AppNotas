@@ -1,6 +1,5 @@
 import { NotasI } from './../../Models/notas.interface';
 import { NotasCrudService } from './../../Services/notas.crud.service';
-import { notas } from './../../notas';
 import { Component, OnInit } from '@angular/core';
 
 
